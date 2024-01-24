@@ -1,0 +1,47 @@
+header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border: 1px solid #999;
+  border-radius: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-bottom-width: 30px;
+  border-top-width: 30px;
+  border-left: 30px solid #999;
+  opacity: 0.5;
+}
+
+.avatar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #999;
+  border-radius: 50%;
+  transition: border-radius 1s;
+}
+
+.avatarloggedout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #999;
+  border-radius: 0;
+  transition: border-radius 1s;
+}
