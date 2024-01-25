@@ -10,21 +10,15 @@ function App() {
   const [language, setLanguage] = useState(sysLanguage);
 
   const handleLanguage = () => {
-    if (language === "DE") {
-      setLanguage("EN");
-    }
-    if (language === "EN") {
-      setLanguage("DE");
-    }
+    setLanguage(language === "DE" ? "EN" : "DE");
   };
 
   const handleLogin = () => {
-    if (userName === "Falk") {
-      setLoggedIn((prevLoggedIn) => (prevLoggedIn = true));
-    }
-    if (loggedIn) {
-      setLoggedIn((prevLoggedIn) => (prevLoggedIn = false));
-    }
+    setLoggedIn(
+      !loggedIn && userName === "Falk"
+        ? (prevLoggedIn) => (prevLoggedIn = true)
+        : (prevLoggedIn) => (prevLoggedIn = false)
+    );
   };
 
   return (
