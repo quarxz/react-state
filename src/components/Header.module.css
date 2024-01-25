@@ -3,25 +3,23 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   border: 1px solid #999;
-  border-radius: 20px;
   padding: 20px;
   overflow: hidden;
-}
-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 10px;
-  width: 0;
-  height: 0;
-  border: 0 solid transparent;
-  border-bottom-width: 30px;
-  border-top-width: 30px;
-  border-left: 30px solid #999;
-  opacity: 0.5;
-}
 
+  border-radius: none;
+  transition: border-radius 0.3s;
+}
+.header-loggedin {
+  border-radius: 20px;
+  transition: border-radius 0.3s;
+}
+header .syslanguage {
+  font-size: 20px;
+  margin-left: -100px;
+}
 .avatar {
   display: flex;
   flex-direction: row;
@@ -29,9 +27,12 @@ header::after {
   align-items: center;
   width: 40px;
   height: 40px;
-  border: 1px solid #999;
+  border: 1px solid rgba(153, 153, 153, 1);
+  background-color: rgba(153, 153, 153, 0.5);
+  /* background-color: rgb(0, 128, 0, 0.5); */
   border-radius: 50%;
-  transition: border-radius 1s;
+  transition: all 0.3s;
+  font-weight: 700;
 }
 
 .avatarloggedout {
@@ -42,6 +43,8 @@ header::after {
   width: 40px;
   height: 40px;
   border: 1px solid #999;
+  background-color: rgba(153, 153, 153, 0.2);
+  /* background-color: rgb(255, 0, 1, 0.5); */
   border-radius: 0;
-  transition: border-radius 1s;
+  transition: all 0.3s;
 }

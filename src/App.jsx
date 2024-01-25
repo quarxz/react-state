@@ -6,27 +6,42 @@ import { Content } from "./components/Content";
 import "./App.css";
 
 function App() {
-  const name = "Falk";
-  const [loggedIn, setLoggedIn] = useState(true);
-  const [language, setLanguage] = useState("D");
+  const userName = "Falk";
+  const sysLanguage = "DE";
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [language, setLanguage] = useState(sysLanguage);
 
-  let handleLanguage = () => {
-    if (language === "D") {
-      setLanguage("E");
+  const handleLanguage = () => {
+    if (language === "DE") {
+      setLanguage("EN");
     }
-    if (language === "E") {
-      setLanguage("D");
+    if (language === "EN") {
+      setLanguage("DE");
+    }
+  };
+
+  const handleLogin = () => {
+    if (userName === "Falk") {
+      setLoggedIn(true);
+    }
+    if (loggedIn) {
+      setLoggedIn(false);
     }
   };
 
   return (
     <>
-      <Header name={name} loggedIn={loggedIn} />
-      <Content name={name} loggedIn={loggedIn} language={language} />
+      <Header name={userName} loggedIn={loggedIn} language={language} />
+      <Content name={userName} loggedIn={loggedIn} language={language} />
       <button onClick={handleLanguage}>
-        {language === "D" ? "Umschalten auf English" : "Switch to German"}
+        {language === "DE" ? "Umschalten auf Englisch" : "Switch to German"}
       </button>
-      <button onClick={() => setLoggedIn(!loggedIn)}>
+      <button
+        style={{
+          backgroundColor: loggedIn ? "red" : "green",
+        }}
+        onClick={handleLogin}
+      >
         {loggedIn ? "Logout" : "Login"}
       </button>
     </>
