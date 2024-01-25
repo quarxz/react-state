@@ -1,13 +1,11 @@
 import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
 import { Header } from "./components/Header";
 import { Content } from "./components/Content";
 import "./App.css";
 
 function App() {
-  const userName = "Falk";
   const sysLanguage = "DE";
+  const userName = "Falk";
   const [loggedIn, setLoggedIn] = useState(false);
   const [language, setLanguage] = useState(sysLanguage);
 
@@ -22,10 +20,10 @@ function App() {
 
   const handleLogin = () => {
     if (userName === "Falk") {
-      setLoggedIn(true);
+      setLoggedIn((prevLoggedIn) => (prevLoggedIn = true));
     }
     if (loggedIn) {
-      setLoggedIn(false);
+      setLoggedIn((prevLoggedIn) => (prevLoggedIn = false));
     }
   };
 
